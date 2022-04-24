@@ -1,5 +1,6 @@
-import React from "react"
+import React, {useState} from "react"
 import {Text, FlatList, View} from "react-native"
+import { TouchableOpacity } from "react-native"
 import styles from "./activity.styles"
 
 const activities = [
@@ -36,6 +37,8 @@ const activities = [
 ]
 
 const Activity = () => {
+    const [count, setCount] = useState(0)
+
     const renderItem = ({item}) => {
         return (
             <View style={styles.itemContainer}>
@@ -60,6 +63,9 @@ const Activity = () => {
 
     return (
         <View style={styles.container}>
+            <TouchableOpacity onPress={() => setCount(count + 1)}>
+                <Text>{count}</Text>
+            </TouchableOpacity>
             <Text>List of activities</Text>
             <FlatList 
                 data={activities}
