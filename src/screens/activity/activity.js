@@ -1,5 +1,5 @@
-import React, {useState} from "react"
-import {Text, FlatList, View} from "react-native"
+import React, {useState, useEffect} from "react"
+import {Text, FlatList, View, Alert} from "react-native"
 import { TouchableOpacity } from "react-native"
 import styles from "./activity.styles"
 
@@ -39,6 +39,8 @@ const activities = [
 const Activity = () => {
     const [count, setCount] = useState(0)
 
+    console.log('рендер')
+
     const renderItem = ({item}) => {
         return (
             <View style={styles.itemContainer}>
@@ -61,11 +63,16 @@ const Activity = () => {
         return <View style={styles.separator} />
     }
 
+    useEffect(() => {
+        Alert.alert(`Вы нажали ${count} раз`)
+    }, [count])
+
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={() => setCount(count + 1)}>
                 <Text>{count}</Text>
             </TouchableOpacity>
+            <TouchableOpacity><Text>Рендер</Text></TouchableOpacity>
             <Text>List of activities</Text>
             <FlatList 
                 data={activities}
