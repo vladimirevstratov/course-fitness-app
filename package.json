@@ -7,7 +7,9 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "lint:check": "eslint ./src --ext .js,.jsx",
+    "lint:fix": "eslint --fix ./src --ext .js,.jsx"
   },
   "dependencies": {
     "expo": "~43.0.2",
@@ -18,7 +20,11 @@
     "react-native-web": "0.17.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "@babel/eslint-parser": "^7.17.0",
+    "@react-native-community/eslint-config": "^3.0.2",
+    "eslint": "^8.16.0",
+    "eslint-plugin-react-native": "^4.0.0"
   },
   "private": true
 }
