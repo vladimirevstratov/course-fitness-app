@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Text, TouchableOpacity, View } from 'react-native';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import styles from './welcome.style';
 
 const Welcome = () => {

@@ -1,6 +1,6 @@
-import React from "react";
-import { Text, FlatList, View } from 'react-native';
-import styles from "./activity.styles";
+import React from 'react';
+import {Text, FlatList, View} from 'react-native';
+import styles from './activity.styles';
 
 const activities = [
   {
@@ -36,7 +36,7 @@ const activities = [
 ];
 
 const Activity = () => {
-  const renderItem = ({ item }) => {
+  const renderItem = ({item}) => {
     return (
       <View style={styles.itemContainer}>
         <View style={styles.image} />
@@ -64,7 +64,7 @@ const Activity = () => {
       <FlatList
         data={activities}
         renderItem={renderItem}
-        keyExtractor={(item) => item.id}
+        keyExtractor={item => item.id}
         ItemSeparatorComponent={renderSeparator}
       />
     </View>

@@ -9,7 +9,9 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "lint:check": "eslint ./src --ext .js,.jsx",
-    "lint:fix": "eslint --fix ./src --ext .js,.jsx"
+    "lint:fix": "eslint --fix ./src --ext .js,.jsx",
+    "prettier:check": "prettier --check ./src",
+    "prettier:fix": "prettier --write ./src"
   },
   "dependencies": {
     "expo": "~43.0.2",
@@ -24,7 +26,10 @@
     "@babel/eslint-parser": "^7.17.0",
     "@react-native-community/eslint-config": "^3.0.2",
     "eslint": "^8.16.0",
-    "eslint-plugin-react-native": "^4.0.0"
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react-native": "^4.0.0",
+    "prettier": "^2.6.2"
   },
   "private": true
 }

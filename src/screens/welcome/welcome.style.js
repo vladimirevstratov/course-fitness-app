@@ -1,10 +1,10 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 import {
   ALICE_BLUE_COLOR,
   MEDIUM_STATE_BLUE_COLOR,
   RICH_BLACK_COLOR,
   WHITE_COLOR,
-} from "../../constants/theme";
+} from '../../constants/theme';
 
 const styles = StyleSheet.create({
   container: {
