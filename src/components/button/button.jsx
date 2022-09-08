@@ -1,17 +1,12 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 
-const Welcome = props => {
-  const name = 'Иван-Царевич';
-  const element = (
-    <Text key="1" style={styles.text}>
-      Привет, {name}
-    </Text>
-  );
-
+const Button = ({text, isActive, onPress}) => {
   return (
-    <>
-      <View>{element}</View>
-    </>
+    <TouchableOpacity disabled={!isActive} onPress={() => onPress(!isActive)}>
+      <Text>{text}</Text>
+    </TouchableOpacity>
   );
 };
+
+export default Button;
