@@ -88,27 +88,6 @@ const Activity = () => {
 
   return (
     <View style={styles.container}>
-      {1 < 0 ? <Text>Отмечен</Text> : null}
-      <CheckedText isChecked={false} />
-      <ChildComponent
-        imageSource={
-          'https://snack-web-player.s3.us-west-1.amazonaws.com/v2/46/static/media/react-native-logo.79778b9e.png'
-        }
-        image={
-          <Image
-            source={{
-              uri: 'https://snack-web-player.s3.us-west-1.amazonaws.com/v2/46/static/media/react-native-logo.79778b9e.png',
-            }}
-            style={{width: 50, height: 100}}
-            resizeMode={'center'}
-          />
-        }
-      />
-      <Button
-        isActive={isButtonActive}
-        text={'Test isActive'}
-        onPress={handleButtonPress}
-      />
       <Text>List of activities</Text>
       <FlatList
         data={activities}
