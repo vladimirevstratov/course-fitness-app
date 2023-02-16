@@ -1,5 +1,6 @@
 import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, Text, View} from 'react-native';
+import Button from '../../components/button/button';
 import styles from './welcome.style';
 
 const Welcome = () => {
@@ -15,10 +16,8 @@ const Welcome = () => {
           We will help you with activity monitoring and keep your workouts in
           one place.
         </Text>
+        <Button text={'START'} />
       </View>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>START</Text>
-      </TouchableOpacity>
     </View>
   );
 };

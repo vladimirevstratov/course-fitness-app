@@ -1,10 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {
-  ALICE_BLUE_COLOR,
-  MEDIUM_STATE_BLUE_COLOR,
-  RICH_BLACK_COLOR,
-  WHITE_COLOR,
-} from '../../constants/theme';
+import {ALICE_BLUE_COLOR, RICH_BLACK_COLOR} from '../../constants/theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -30,18 +25,6 @@ const styles = StyleSheet.create({
   description: {
     marginTop: 24,
     color: RICH_BLACK_COLOR,
-  },
-  button: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: MEDIUM_STATE_BLUE_COLOR,
-    borderRadius: 25,
-    padding: 15,
-  },
-  buttonText: {
-    fontSize: 18,
-    fontWeight: '700',
-    color: WHITE_COLOR,
   },
 });
 
