@@ -1,11 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, SafeAreaView, Image, ScrollView} from 'react-native';
 import Button from '../../components/button/button';
 import Form from '../../components/form/form';
-import InputRow from '../../components/input-row/input-row';
 import styles from './add-activity.styles';
+import 'react-native-get-random-values';
+import {v4 as uuidv4} from 'uuid';
 
-const AddActivity = () => {
+const AddActivity = ({closeAddActivity, addActivity}) => {
+  const [formValues, setFormValues] = useState({
+    id: uuidv4(),
+    name: null,
+    date: null,
+    imageUrl: null,
+    duration: null,
+    description: null,
+  });
+
+  const handleSavePress = () => {
+    addActivity({activity: {...formValues, date: new Date()}});
+    closeAddActivity();
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView styles={styles.scrollContainer}>
@@ -14,10 +29,14 @@ const AddActivity = () => {
             source={require('../../assets/images/activity-placeholder.jpg')}
             style={styles.image}
           />
-          <Form />
+          <Form values={formValues} setValues={setFormValues} />
         </View>
       </ScrollView>
-      <Button text={'SAVE'} style={styles.saveButton} />
+      <Button
+        text={'SAVE'}
+        style={styles.saveButton}
+        onPress={handleSavePress}
+      />
     </SafeAreaView>
   );
 };

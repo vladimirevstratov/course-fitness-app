@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, FlatList, View, Image} from 'react-native';
+import {Text, FlatList, View, Image, TouchableOpacity} from 'react-native';
 import Button from '../../components/button/button';
 import styles from './activity.styles';
 
@@ -20,40 +20,7 @@ const ChildComponent = ({imageSource, image}) => {
   );
 };
 
-const activities = [
-  {
-    id: '1',
-    name: 'Basketball',
-    date: 'Wed, 21 Jun 30:01',
-    imageUrl: '',
-  },
-  {
-    id: '2',
-    name: 'Basketball',
-    date: 'Wed, 21 Jun 30:01',
-    imageUrl: '',
-  },
-  {
-    id: '3',
-    name: 'Basketball',
-    date: 'Wed, 21 Jun 30:01',
-    imageUrl: '',
-  },
-  {
-    id: '4',
-    name: 'Basketball',
-    date: 'Wed, 21 Jun 30:01',
-    imageUrl: '',
-  },
-  {
-    id: '5',
-    name: 'Basketball',
-    date: 'Wed, 21 Jun 30:01',
-    imageUrl: '',
-  },
-];
-
-const Activity = () => {
+const Activity = ({openAddActivity, activities}) => {
   const [isButtonActive, setIsButtonActive] = useState(true);
 
   const handleButtonPress = isActive => {
@@ -67,7 +34,7 @@ const Activity = () => {
         <View style={styles.infoContainer}>
           <View>
             <Text style={styles.name}>{item.name}</Text>
-            <Text style={styles.date}>{item.date}</Text>
+            <Text style={styles.date}>{item.date.toLocaleString()}</Text>
           </View>
           <View style={styles.actionsContainer}>
             <View style={styles.action}>
@@ -88,6 +55,7 @@ const Activity = () => {
 
   return (
     <View style={styles.container}>
+      <Button onPress={() => openAddActivity()} text={'Add activity'} />
       <Text>List of activities</Text>
       <FlatList
         data={activities}

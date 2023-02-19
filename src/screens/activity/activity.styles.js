@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     borderRadius: 13,
   },
   actionsContainer: {
-    flexDirection: 'row',
+    flexDirection: 'column',
   },
   action: {
     marginLeft: 11,
